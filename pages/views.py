@@ -3,5 +3,9 @@ from django.http import HttpResponse
 from django.views.generic import TemplateView
 # Create your views here.
 
-def IndexPageTemplateView(request):
-    return HttpResponse("Succesfully conencted")
+class IndexPageTemplateView(TemplateView):
+    template_name = "pages/index.html"
+
+
+class AboutPageTemplateView(TemplateView):
+    template_name = "pages/about.html"
