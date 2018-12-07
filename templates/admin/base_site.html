@@ -1,0 +1,11 @@
+{% extends "admin/base.html" %}
+{% load staticfiles %}
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">
+    <img src="{% static 'img/logo.png' %}" width=80 height=50 alt="BT Real Estate"> Admin Page
+</a></h1>
+{% endblock branding %}
+
+{% block extrastyle %}
+    <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+{% endblock extrastyle %}

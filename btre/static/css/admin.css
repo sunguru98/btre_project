@@ -1,0 +1,46 @@
+#header{
+    background:rgb(40,62,96);
+    height:50px;
+    color: rgb(41,171,136)
+}
+#content-related .module h2{
+    color: white
+}
+.module h2, .module caption, .inline-group h2 {
+    background: rgb(41,171,136)
+}
+
+.button.default, input[type=submit].default, .submit-row input.default {
+    background-color: rgb(41,171,136)
+}
+
+.button, input[type=submit], input[type=button], .submit-row input, a.button {
+    background-color: rgb(41,171,136)
+}
+
+input[type=submit]:hover{
+    background-color: rgb(41,171,136)   
+}
+
+div.breadcrumbs a{
+    color: rgb(40,62,96);
+}
+
+div.breadcrumbs{
+    background: rgb(41,171,136)
+}
+a:link, a:visited {
+    color:rgb(40,62,96);
+}
+
+div#recent-actions-module.module{
+    background: rgb(41,171,136)
+}
+
+.actionlist a{
+    color:white
+}
+
+#header #user-tools {
+    font-size:13px;
+}
