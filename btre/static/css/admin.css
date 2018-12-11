@@ -10,6 +10,11 @@
     background: rgb(41,171,136)
 }
 
+ul li span.quiet, a.quiet:link, a.quiet:visited {
+    color:black;
+}
+
+
 .button.default, input[type=submit].default, .submit-row input.default {
     background-color: rgb(41,171,136)
 }
