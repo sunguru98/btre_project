@@ -14,12 +14,20 @@ def signup(request):
         password = request.POST['password']
         password2 = request.POST['password2']
 
-        if password==pasword2:
+        if password==password2:
             if User.objects.filter(username=username).exists():
                 messages.error(request, "Username already exists. Please try again")
                 return redirect('accounts:signup')
+            else:
+                if User.objects.filter(email=email).exists():
+                    messages.error(request, "Email already exists. Please try again")
+                    return redirect('accounts:signup')
+                else:
+                    new_user = User.objects.create_user(username=username, first_name=first_name, last_name=last_name, email=email, password=password)
+                    new_user.save()
+                    messages.success(request, "User registered successfully. Please Login")
         else:
-            messages.error(request, "Test message")
+            messages.error(request, "Passwords do not match. Please try again")
             return redirect('accounts:signup')
     else:       
         return render(request, "accounts/signup.html")
