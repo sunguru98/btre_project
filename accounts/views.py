@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from enquiries.models import Enquiry
 # Create your views here.
 
 def signup(request):
@@ -37,7 +38,11 @@ def signup(request):
 
 @login_required
 def dashboard(request):
-    return render(request, "accounts/dashboard.html")
+    enquiries = Enquiry.objects.order_by("-enquiry_date").filter(user_id=request.user.id)
+    context = {
+        'enquiries':enquiries
+    }
+    return render(request, "accounts/dashboard.html", context)
 
 def user_login(request):
     if not request.user.is_authenticated:

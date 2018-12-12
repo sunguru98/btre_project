@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'listings',
     'realtors',
     'accounts',
+    'enquiries'
 ]
 
 MIDDLEWARE = [
@@ -140,5 +141,12 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 }
 
-LOGIN_URL = "login"
+LOGIN_URL = "/accounts/login/"
 LOGIN_REDIRECT_URL = "index" 
+
+#Email 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USERNAME = 'sunguru98@gmail.com'
+EMAIL_PASSWORD = 'Sundeep1998'
+EMAIL_USE_TLS = True
